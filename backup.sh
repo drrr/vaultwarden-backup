@@ -23,7 +23,7 @@ source "${BACKUP_ROOT}"/backup.conf
 cd "${TARGET_ROOT}"
 mkdir -p "${BACKUP_DIR_PATH}"
 
-tar -cJf "${BACKUP_FILE_PATH}" -C "${BACKUP_ROOT}" "${BACKUP_DIR_NAME}"
+tar --zstd -cf "${BACKUP_FILE_PATH}" -C "${BACKUP_ROOT}" "${BACKUP_DIR_NAME}"
 rm -rf "${BACKUP_DIR_PATH}"
 md5sum "${BACKUP_FILE_PATH}"
 sha1sum "${BACKUP_FILE_PATH}"
